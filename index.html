@@ -29,7 +29,7 @@
     font-weight: 300;
     line-height: 1.6;
     min-height: 100vh;
-    padding-top: 70px; /* Tilaa kiinteälle navigaatiolle */
+    padding-top: 70px;
   }
 
   /* ── NAVIGAATIO ── */
@@ -39,7 +39,7 @@
     left: 0;
     right: 0;
     height: 70px;
-    background: rgba(14, 26, 23, 0.9);
+    background: rgba(14, 26, 23, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     z-index: 100;
@@ -415,3 +415,340 @@
   }
 
   .edu-school {
+    font-size: 13px;
+    color: var(--teal-light);
+    margin-bottom: 4px;
+  }
+
+  .edu-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+  }
+
+  /* ── CONTACT SECTION ── */
+  .contact-section {
+    margin-top: 64px;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(26,107,90,0.15), rgba(14,26,23,0.8));
+    border: 1px solid rgba(36,147,124,0.3);
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .contact-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .contact-section p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+
+  .contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: var(--teal-mid);
+    color: var(--white);
+  }
+
+  .btn-primary:hover {
+    background: #2cb598;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--teal-light);
+    background: rgba(255,255,255,0.05);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── PRINT / MOBILE ── */
+  @media (max-width: 700px) {
+    .layout { grid-template-columns: 1fr; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-contact { text-align: left; }
+    .hero-left { flex-direction: column; align-items: flex-start; }
+    .nav-container { padding: 0 16px; }
+  }
+
+  @media print {
+    body { background: white; color: black; padding-top: 0; }
+    body::before, .navbar { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGAATIO -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-brand">Tomi <span>Sankman</span></a>
+    <ul class="nav-links">
+      <li><a href="#cv">CV & Osaaminen</a></li>
+      <li><a href="#yhteystiedot">Ota yhteyttä</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrapper" id="cv">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-left">
+      <div>
+        <h1 class="hero-name">
+          Tomi
+          <span>Sankman</span>
+        </h1>
+        <p class="hero-tagline">Raudanluja moniosaaja &nbsp;·&nbsp; Suomi</p>
+      </div>
+    </div>
+    <div class="hero-contact">
+      <div>📍 Pori, Finland</div>
+      <div>📞 <a href="tel:0401203769">0401203769</a></div>
+      <div>✉ <a href="mailto:tomi.sankman@gmail.com">tomi.sankman@gmail.com</a></div>
+    </div>
+  </header>
+
+  <div class="badge-row">
+    <span class="badge gold">🚗 BC-ajokortti</span>
+    <span class="badge">🇫🇮 Suomi — Äidinkieli</span>
+    <span class="badge">🇬🇧 Englanti — Hyvä</span>
+    <span class="badge">🇩🇪 Saksa — Perusteet</span>
+    <span class="badge">10+ vuotta rakennusala</span>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout">
+
+    <!-- LEFT: EXPERIENCE -->
+    <main>
+
+      <div class="main-section">
+        <div class="section-title">Työkokemus</div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Asentaja / Rakennustyöntekijä</div>
+            <div class="job-dates">Huhti 2014 – Maalis 2021</div>
+          </div>
+          <div class="job-company">Haaslahti OY &mdash; Koko Suomi</div>
+          <ul class="job-bullets">
+            <li>Purkutyöt ja kaivantotyöt ympäri Suomea</li>
+            <li>Timanttityöt (poraus ja leikkaus)</li>
+            <li>Pinta-, pohja- ja kuiluasennustyöt</li>
+            <li>Työsuojeluvastaava</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Rakennustyöntekijä</div>
+            <div class="job-dates">Kesä 2021 – Elo 2022</div>
+          </div>
+          <div class="job-company">Tehokuivaus OY &mdash; Pori</div>
+          <ul class="job-bullets">
+            <li>Purku-, rakenne- ja pintatyöt</li>
+            <li>Laatoitus, runkotyöt ja viimeistelyt</li>
+            <li>Erilaiset rakennus- ja saneeraustyöt</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Projektinjohtaja</div>
+            <div class="job-dates">Elo 2020 – Touko 2021</div>
+          </div>
+          <div class="job-company">Porin Pölli ja Pökkelö &mdash; Pori</div>
+          <ul class="job-bullets">
+            <li>Asiakaskäynnit ja projektin koordinointi</li>
+            <li>Aikataulutus ja resurssien hallinta</li>
+            <li>Mainonta ja sosiaalinen media</li>
+            <li>Käytännön rakennustyöt</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Teknikko (Etätyö)</div>
+            <div class="job-dates">Loka 2022 – Kesä 2024</div>
+          </div>
+          <div class="job-company">Majorel / Volkswagen &mdash; Saksa</div>
+          <ul class="job-bullets">
+            <li>Käännöstyöt englannista suomeksi</li>
+            <li>Asiakaspalvelu englanniksi ja suomeksi</li>
+            <li>Sähköautojen, latureiden ja asiakastilien ongelmanratkaisu</li>
+            <li>Uusien työntekijöiden puhelinkoulutuksen vastuuhenkilö</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Verkkokaupan sisällöntuottaja</div>
+            <div class="job-dates">Loka 2024 – Maalis 2025</div>
+          </div>
+          <div class="job-company">Motormarket &mdash; Pori (Sopimus)</div>
+          <ul class="job-bullets">
+            <li>Sisällön luominen sosiaaliseen mediaan</li>
+            <li>Vetävien tuoteselostusten laatiminen</li>
+            <li>Tuotesisältöjen hallinta Excelissä ja Google Sheetsissa</li>
+            <li>Videoiden muokkaus ja käsittely</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="main-section">
+        <div class="section-title">Koulutus</div>
+        <div class="edu-block">
+          <div class="edu-degree">Puualan perustutkinto</div>
+          <div class="edu-school">Winnova — Pori</div>
+          <div class="edu-meta">Elo 2002 – Kesä 2005 &nbsp;·&nbsp; EQF-taso 3 &nbsp;·&nbsp; 120 ov</div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- RIGHT: SIDEBAR -->
+    <aside>
+
+      <!-- PROFILE -->
+      <div class="sidebar-block">
+        <div class="section-title">Profiili</div>
+        <p style="font-size:13.5px; color:rgba(255,255,255,0.65); line-height:1.75;">
+          Monipuolinen ja motivoitunut ammattilainen, jolla on yli 10 vuoden kenttäkokemusta ympäri Suomea. Nopea sopeutumaan, huolellinen toteutuksessa ja mukava sekä johtajana että tiimin jäsenenä. Sujuva suomen ja englannin kielen taito.
+        </p>
+      </div>
+
+      <!-- CONTACT / DETAILS -->
+      <div class="sidebar-block">
+        <div class="section-title">Tiedot</div>
+        <div class="info-line"><span class="info-label">Sijainti</span><span>Pori, Suomi</span></div>
+        <div class="info-line"><span class="info-label">Ajokortti</span><span>BC — Kuorma-auto ja henkilöauto</span></div>
+        <div class="info-line"><span class="info-label">Työ</span><span>Kokoaikatyö, toistaiseksi</span></div>
+        <div class="info-line"><span class="info-label">Alue</span><span>Vain Pori</span></div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="sidebar-block">
+        <div class="section-title">Kielet</div>
+        <div class="lang-row">
+          <span class="lang-name">Suomi</span>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="lang-level">Äidinkieli</span>
+            <div class="lang-dots">
+              <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Englanti</span>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="lang-level">Hyvä</span>
+            <div class="lang-dots">
+              <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Saksa</span>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="lang-level">Perusteet</span>
+            <div class="lang-dots">
+              <div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="sidebar-block">
+        <div class="section-title">Keskeinen osaaminen</div>
+        <div>
+          <span class="skill-tag">Käsikaivanto</span>
+          <span class="skill-tag">Koneellinen kaivanto</span>
+          <span class="skill-tag">Kuiluasennus</span>
+          <span class="skill-tag">Timanttityöt</span>
+          <span class="skill-tag">Purkutyöt</span>
+          <span class="skill-tag">Pintatyöt</span>
+          <span class="skill-tag">Tiiminvetäjä</span>
+          <span class="skill-tag">Työsuojelu</span>
+          <span class="skill-tag">Nopea oppija</span>
+        </div>
+      </div>
+
+      <!-- NOTE -->
+      <div class="sidebar-block">
+        <div class="section-title">Lisätiedot</div>
+        <div class="highlight-box">
+          Voin työskennellä ainoastaan Porin alueella. Olen kolmen pienen lapsen yksinhuoltaja — pystyn sitoutumaan luotettavasti sovittuihin työaikoihin.
+        </div>
+      </div>
+
+      <!-- MINDSET -->
+      <div class="sidebar-block">
+        <div class="section-title">Asenne</div>
+        <div class="highlight-box" style="font-style:normal; background: linear-gradient(135deg, rgba(201,151,58,0.12), rgba(201,151,58,0.04)); border-color: rgba(201,151,58,0.3);">
+          <span style="font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--gold); display:block; margin-bottom:10px; letter-spacing:1px;">Ei ole mitään mitä en pysty tekemään.</span>
+          <span style="color:rgba(255,255,255,0.65); font-size:12.5px; line-height:1.8;">
+            Muutin 2022 yksin kolmen pienen lapsen kanssa Suomesta Saksaan — enkä osannut puhua kieltä.<br><br>
+            Rakensin uuden elämän tyhjästä: tein töitä, opin kielen ja selvisin.<br><br>
+            <strong style="color:rgba(255,255,255,0.9);">Jos pystyin tekemään sen, pystyn mihin vain.</strong><br><br>
+            Uudet tehtävät, uudet ympäristöt, uudet haasteet – Ei ongelmaa.
+          </span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" id="yhteystiedot">
+    <h2>Ota yhteyttä</h2>
+    <p>Etsitkö luotettavaa ja monipuolista ammattilaista Poriin? Ota yhteyttä sähköpostitse tai puhelimitse!</p>
+    <div class="contact-buttons">
+      <a href="mailto:tomi.sankman@gmail.com" class="btn btn-primary">✉ Lähetä sähköpostia</a>
+      <a href="tel:0401203769" class="btn btn-secondary">📞 Soita 040 120 3769</a>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
